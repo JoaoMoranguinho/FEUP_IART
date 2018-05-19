@@ -5,7 +5,12 @@
  */
 package jade_project;
 
+import jess.Defglobal;
 import jess.JessException;
+import jess.Value;
+import nrc.fuzzy.FuzzyValue;
+import nrc.fuzzy.FuzzyVariable;
+import nrc.fuzzy.RightLinearFuzzySet;
 import nrc.fuzzy.jess.FuzzyRete;
 
 /**
@@ -30,8 +35,12 @@ public class Main  {
         /*
         listener code
         */
-        engine.eval("(printout t \"The answer is \" 42 \"!\" crlf)");
+        Defglobal dg =engine.findDefglobal("*airTempFvar*");
+     
+        //FuzzyValue f1 = new FuzzyValue(engine.findDefglobal("*airTempFvar*").getInitializationValue(),"OK");
        
+        System.out.println(engine.findDefglobal("*airTempFvar*").toString());
+ 
     }
     
 }

@@ -1,5 +1,5 @@
 (import nrc.fuzzy.*)
-;; Two globals to hold our FuzzyVariables for air temperature and fan speed
+;; Two globals to hold our FuzzyVariables for air temperature and fan speed, globals are not destroyed by reset(), all globals must start and end with **
 (defglobal ?*airTempFvar* = (new FuzzyVariable "airTemperature" 0.0 100.0 "Deg C"))
 (defglobal ?*fanSpeedFvar* = (new FuzzyVariable "fanSpeed" 0.0 1000.0 "RPM"))
 (defrule init "An initialization rule that adds the terms to the FuzzyVariables"
