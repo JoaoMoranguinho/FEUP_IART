@@ -35,8 +35,9 @@ public class FuzzyEngine {
     public ArrayList<Double> crispTemp;
     public ArrayList<Double> fanRpmV;
     public int counter=0;
+     public ArrayList<Pair<String,Pair<Integer,Integer>>> tempRange=null,fanRange=null;
     /**
-     * Creates new form HomePage
+     * Creates ublinew form HomePage
      */
     public FuzzyEngine() {
         crispTemp= new ArrayList<Double>();
@@ -72,6 +73,9 @@ public class FuzzyEngine {
      fanSpeed.addTerm("low", new RFuzzySet(0.0, 500.0, rlf));
      fanSpeed.addTerm("medium", new TriangleFuzzySet(250.0, 500.0, 750.0));
      fanSpeed.addTerm("high", new LFuzzySet(500.0, 1000.0, llf));
+     Pair<Integer,Integer> range;
+     Pair<String,Pair<Integer,Integer>> termNameRange;
+     
      // define the 3 fuzzy rules each with a single antecedent and
      // a single conclusion fuzzy value
      coldTemp.addAntecedent(new FuzzyValue(airTemp,"cold"));
@@ -136,7 +140,9 @@ public class FuzzyEngine {
      
      System.out.println(globalFanSpeedfv.getFuzzySet().toString() + " " + globalFanSpeedfv.getFuzzyVariable().getName());
      Enumeration a1= globalFanSpeedfv.getFuzzyVariable().findTermNames();
-     System.out.println(a1.nextElement().toString());
+     while(a1.hasMoreElements())
+         System.out.println(a1.nextElement().toString());
+     
      }
      catch (FuzzyException fe)
      { System.err.println(fe); System.exit(100);}

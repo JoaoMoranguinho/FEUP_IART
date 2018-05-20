@@ -5,7 +5,17 @@
  */
 package jade_project;
 
+import com.github.fedy2.weather.YahooWeatherService;
+import com.github.fedy2.weather.data.Channel;
+import com.github.fedy2.*;
+import com.github.fedy2.weather.data.unit.DegreeUnit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.bind.JAXBException;
 import jess.JessException;
+import org.slf4j.LoggerFactory;
+
 
 
 /**
@@ -18,10 +28,11 @@ public class Home_Data extends javax.swing.JFrame {
     public int counter=7;
     /**
      * Creates new form Home_Data
+     * @throws java.io.IOException
      */
-    public Home_Data() {
+    public Home_Data()  {
         fz= new FuzzyEngine();
-        initComponents();
+        initComponents();  
         
     }
 
@@ -250,7 +261,9 @@ public class Home_Data extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Home_Data().setVisible(true);
+              
+                    new Home_Data().setVisible(true);
+          
             }
         });
     }

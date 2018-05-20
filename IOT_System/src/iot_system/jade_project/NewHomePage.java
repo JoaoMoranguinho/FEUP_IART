@@ -5,6 +5,9 @@
  */
 package jade_project;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 import jess.JessException;
 
@@ -252,8 +255,10 @@ public class NewHomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MouseExited
 
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
-        // TODO add your handling code here:
-        new Home_Data().setVisible(true);
+
+            // TODO add your handling code here:
+            new Home_Data().setVisible(true);
+       
     }//GEN-LAST:event_jPanel2MousePressed
 
     public void setColor(JPanel panel){
